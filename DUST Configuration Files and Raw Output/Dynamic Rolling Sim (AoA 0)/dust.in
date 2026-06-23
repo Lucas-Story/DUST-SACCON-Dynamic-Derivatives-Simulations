@@ -1,0 +1,46 @@
+! Simulation name
+basename       = ./Output/saccon
+
+! --- Time parameters ---
+tstart = 0.0
+tend = 3
+dt = 0.00625
+dt_out = 0.00625
+output_start = T
+
+! --- Restart ---
+restart_from_file = F
+
+! --- Reference values ---
+u_inf = (/43, 0.0, 0.0/)
+
+! --- Geometry files ---
+geometry_file = geo_input.h5
+reference_file = References.in
+
+! wake parameters -------------
+n_wake_panels = 1
+n_wake_particles = 1000000
+particles_box_min = (/ -4.0, -4.0, -4.0/)
+particles_box_max = (/  12.0,  4.0, 4.0/)
+
+! settaggio fast multiple FMM ----------
+fmm = T
+
+! octree param -----------
+octree_origin = (/ -4.0, -4.0, -4.0/)
+box_length = 4
+n_box = (/ 4, 2, 2/) 
+
+n_octree_levels = 6
+min_octree_part = 5
+multipole_degree = 2 
+
+
+! --- Kutta Condition Correction ---
+kutta_beta = 0.01
+kutta_correction = F
+kutta_startstep = 1
+kutta_maxiter = 20
+kutta_tol = 1.0e-6
+kutta_update_jacobian = 1
